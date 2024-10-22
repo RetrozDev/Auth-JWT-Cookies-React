@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx @biomejs/biome format --write './server' './client'"
+    "dev": "concurrently \"npm run dev-client\" \"npm run start-server\"",
+    "dev-client": "cd client && npm run dev",
+    "start-server": "cd server && npm run start",
+    "format": "npx @biomejs/biome format --write './client' './server'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "^1.9.2"
+  },
+  "dependencies": {
+    "concurrently": "^9.0.1"
   }
 }
